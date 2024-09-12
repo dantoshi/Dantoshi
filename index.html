@@ -1,29 +1,93 @@
 <!DOCTYPE html>
 <html>
-
-
 <head>
-<title> Dantoshi </title>
-	<!-- resizes page to user's device -->
-<meta name="viewport" content="width=device-width, inital-scale =1.0">
-<style>
-h1 {color: white}
-p {color:white}
-body {background-color: dimgrey}
-</style>
+    <title>Dantoshi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: dimgrey;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: dimgrey;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #main-div {
+            display: flex;
+            flex: 1;
+            height: calc(100vh - 60px); /* Adjust height to fill the remaining space below header */
+        }
+
+        nav {
+            width: 30%;
+            background-color: grey;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 70%;
+            background-color: lightgrey;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%; /* Ensure iframe takes full height of section */
+            border: none;
+        }
+    </style>
 </head>
-
-
 <body>
+    <header>
+        <h1>Dantoshi</h1>
+        <h3 style="color:orange;">Be Good for Goodness Sake</h3>
+        <hr>
+    </header>
 
-<h1> Dantoshi </h1>
-<h3 style="color:orange;"> Be Good for Goodness Sake</h3>
-<hr>
-<br>
-<h3 style="color:white;"> Content Feed: </h3>
-<p> Coming Soon... Website currently under construction. </p>
+    <div id="main-div">
+        <nav>
+            <h3>Content Feed:</h3>
+            <br>
+			
+			<a href="https://example.com/page1" onclick="updateIframeSrc(this.href); return false;" id="featured-link">Featured Link</a><br>
+			<br>
+            <a href="https://example.com/page2" onclick="updateIframeSrc(this.href); return false;">Link 2</a><br>
+			<br>
+            <a href="https://example.com/page3" onclick="updateIframeSrc(this.href); return false;">Link 3</a><br>
+			<br>
+            <!-- Add more links as needed -->
+        </nav>
 
+        <section>
+            <iframe id="content-frame" src=""></iframe>
+        </section>
+    </div>
+
+    <script>
+        function updateIframeSrc(url) {
+            document.getElementById('content-frame').src = url;
+        }
+
+        // Set the iframe src to the first link on page load
+        window.onload = function() {
+            var featuredLink = document.getElementById('featured-link').href;
+            updateIframeSrc(featuredLink);
+        }
+    </script>
 </body>
-
-
 </html>
