@@ -36,6 +36,7 @@
             text-align: center;
             padding: 10px;
             box-sizing: border-box;
+            position: relative; /* Position relative for centering the email at the bottom */
         }
 
         section {
@@ -62,11 +63,21 @@
         }
 
         a:hover {
-            color: lightgrey; /* Highlight color when hovered */
+            color: #FFD700; /* Optional: Highlight color when hovered (Gold) */
         }
 
         a:active {
             color: orange; /* Keep it orange when active */
+        }
+
+        /* Email Styling */
+        h6 {
+            color: lightgrey;
+            text-align: center;
+            position: absolute;
+            bottom: 10px; /* Position the email at the bottom of the nav */
+            width: 100%;
+            margin: 0;
         }
 
     </style>
@@ -90,6 +101,9 @@
             		<a href="AKeytoWealth-A-1.html" onclick="updateIframeSrc(this.href); return false;"> One of the Keys to Wealth | BLOG </a> <br>
 			<br>
             <!-- Add more links as needed -->
+
+            <!-- Email at the bottom -->
+            <h6>dantoshi.contact@gmail.com</h6>
         </nav>
 
         <section>
