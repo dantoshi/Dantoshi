@@ -70,6 +70,13 @@
             color: orange; /* Keep it orange when active */
         }
 
+        /* Ensure the email fits on smaller screens */
+        .email {
+            font-size: 1em; /* Use relative units for better scalability */
+            color: white;
+            margin: 0; /* Remove default margins */
+            padding: 10px; /* Add some padding to ensure it doesn't touch other elements */
+        }
     </style>
 </head>
 <body>
@@ -94,11 +101,8 @@
             <br>
             <!-- Add more links as needed -->
             <hr>
+            <p class="email">dantoshi.contact@gmail.com</p>
             <a style="text-align:right;" href="Donate.html" onclick="updateIframeSrc(this.href); return false;">DONATE &#x20BF;</a>
-            <p style="color:white;">dantoshi.contact@gmail.com</p>
-            
-            <!-- <h3> Previous </h3>
-            <a href="Archives.html" onclick="updateIframeSrc(this.href); return false;"> ARCHIVES </a> -->
         </nav>
 
         <section>
