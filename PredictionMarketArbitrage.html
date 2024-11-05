@@ -27,18 +27,21 @@
     Here’s how it works: the calculator identifies the "Best Price" for each option. For Trump, the best price of $0.530 is available on PredictIt,
     while for Harris, $0.403 on Polymarket is the most favorable. These prices allow us to calculate the implied probabilities:
     <ul>
-        <li>Trump: 53.0% probability (1 / 0.530)</li>
-        <li>Harris: 40.3% probability (1 / 0.403)</li>
+        <li>Trump: 53.0% probability, calculated as 1 / 0.530</li>
+        <li>Harris: 40.3% probability, calculated as 1 / 0.403</li>
     </ul>
-    When we add these probabilities together, we get a total probability of 0.933, which is below 1.0. This means there’s an arbitrage opportunity,
-    as indicated by the "Opportunity?" field marked as "TRUE."
+    When we add these probabilities together, we get a total probability of 0.933, which is below 1.0. This indicates an arbitrage opportunity,
+    as shown by the "Opportunity?" field marked as "TRUE."
 <br> <br>
-    With a total investment of $10,000 we strategically allocate:
+    With a total investment of $10,000, we strategically allocate funds based on each option's probability to guarantee profit regardless of the outcome:
     <ul>
-        <li>Trump: $5,680</li>
-        <li>Harris: $4,319</li>
+        <li>Trump: $10,000 × (1 - 0.403) = $5,680</li>
+        <li>Harris: $10,000 × (1 - 0.530) = $4,319</li>
     </ul>
-    This setup guarantees a profit regardless of the outcome, resulting in a projected Return on Investment (R.O.I.) of $670.
+    This setup guarantees a profit regardless of the outcome, with a projected Return on Investment (R.O.I.) calculated as:
+    <ul>
+        <li>R.O.I. = Total Payout - Total Investment = $10,670 - $10,000 = $670</li>
+    </ul>
     This approach allows investors to exploit market inefficiencies in prediction markets, generating profit without any directional exposure.
 <br> <br>
     Here is an image containing the Prediction Market Arbitrage Calculator:
