@@ -20,31 +20,63 @@
     
 <body>
 <p>
-    Prediction markets offer a unique and profitable opportunity for savvy investors looking to capitalize on pricing discrepancies. In this example,
-    we identify an arbitrage opportunity across three major prediction markets—Robinhood, Polymarket, and PredictIt—on potential outcomes for "Trump" vs. "Harris."
-    By carefully allocating capital based on the best available prices, you can lock in a risk-free return without needing to predict the outcome.
-<br> <br>
-    Here’s how it works: the calculator identifies the "Best Price" for each option. For Trump, the best price of $0.530 is available on PredictIt,
-    while for Harris, $0.403 on Polymarket is the most favorable. These prices allow us to calculate the implied probabilities:
+    Prediction markets present a unique opportunity for investors to capitalize on pricing discrepancies through arbitrage. In this example,
+    we’ll explore an arbitrage strategy across three major prediction markets—Robinhood, Polymarket, and PredictIt—on potential outcomes for "Trump" vs. "Harris."
+    By carefully distributing capital based on each option’s best available price, you can lock in a risk-free return, regardless of the actual outcome.
+<br><br>
+
+<h3>Step 1: Identify Best Prices and Implied Probabilities</h3>
+<p>
+    To find the arbitrage opportunity, we first identify the "Best Price" for each outcome across markets. This is done by looking for the lowest cost for each outcome,
+    allowing us to calculate the **implied probability** of each outcome based on market price.
     <ul>
-        <li>Trump: 53.0% probability, calculated as 1 / 0.530</li>
-        <li>Harris: 40.3% probability, calculated as 1 / 0.403</li>
+        <li>For Trump: the best price is $0.530 on PredictIt.</li>
+        <li>For Harris: the best price is $0.403 on Polymarket.</li>
     </ul>
-    When we add these probabilities together, we get a total probability of 0.933, which is below 1.0. This indicates an arbitrage opportunity,
-    as shown by the "Opportunity?" field marked as "TRUE."
-<br> <br>
-    With a total investment of $10,000, we strategically allocate funds based on each option's probability to guarantee profit regardless of the outcome:
+
+    We calculate the implied probabilities for each candidate:
     <ul>
-        <li>Trump: $10,000 × (1 - 0.403) = $5,680</li>
-        <li>Harris: $10,000 × (1 - 0.530) = $4,319</li>
+        <li>Trump's Implied Probability = \( \frac{1}{0.530} = 1.887 \) ≈ 53.0%</li>
+        <li>Harris's Implied Probability = \( \frac{1}{0.403} = 2.481 \) ≈ 40.3%</li>
     </ul>
-    This setup guarantees a profit regardless of the outcome, with a projected Return on Investment (R.O.I.) calculated as:
+
+    **Combined Implied Probability** = Trump’s Implied Probability + Harris’s Implied Probability = 53.0% + 40.3% = 93.3% (0.933). 
+    Since this sum is less than 1 (100%), it indicates an arbitrage opportunity.
+</p>
+
+<h3>Step 2: Staking Strategy Based on Implied Probabilities</h3>
+<p>
+    Next, we determine how to allocate a total investment of $10,000 across the two outcomes to ensure a profit regardless of the result. This involves staking a proportion of the total investment in line with each outcome's implied probability.
+
     <ul>
-        <li>R.O.I. = Total Payout - Total Investment = $10,670 - $10,000 = $670</li>
+        <li>Trump Stake = Total Investment × (1 - Harris's Implied Probability) = $10,000 × (1 - 0.403) ≈ $5,680</li>
+        <li>Harris Stake = Total Investment × (1 - Trump's Implied Probability) = $10,000 × (1 - 0.530) ≈ $4,319</li>
     </ul>
-    This approach allows investors to exploit market inefficiencies in prediction markets, generating profit without any directional exposure.
+</p>
+
+<h3>Step 3: Calculate Total Payout and Return on Investment (R.O.I.)</h3>
+<p>
+    With our stakes in place, we can calculate the guaranteed profit from this arbitrage opportunity.
+    <ul>
+        <li>Total Payout (if Trump Wins) = Trump Stake / Trump’s Best Price = $5,680 / 0.530 ≈ $10,679</li>
+        <li>Total Payout (if Harris Wins) = Harris Stake / Harris’s Best Price = $4,319 / 0.403 ≈ $10,707</li>
+    </ul>
+
+    Regardless of the outcome, we achieve a total payout greater than the initial investment of $10,000. The profit is calculated as:
+    <ul>
+        <li>Profit = Total Payout - Total Investment</li>
+        <li>R.O.I. = Profit / Total Investment × 100</li>
+        <li>For example, if Trump wins: Profit = $10,679 - $10,000 = $679, and R.O.I. ≈ 6.79%</li>
+    </ul>
+</p>
+
+<h3>Conclusion: Exploiting Market Inefficiencies for Profit</h3>
+<p>
+    This approach enables investors to generate profit by exploiting **market inefficiencies in prediction markets** without relying on the outcome. Arbitrage strategies like this can offer risk-free returns, allowing you to benefit from combined implied probability sums below 1.
+</p>
+
 <br> <br>
-    Here is an image containing the Prediction Market Arbitrage Calculator:
+Here is an image containing the Prediction Market Arbitrage Calculator:
 </p>
 <img src="PredictionMarketArbitrage.png" alt="Prediction Market Arbitrage Calculator" width="100%" style="max-height: 100vh;">
 <a href="https://docs.google.com/spreadsheets/d/1mvjXWBaaAU28SYcF8lmiUcJq6FPfmqsxHQJAOnZY-Rg/edit?usp=sharing">Or Click Here to View/Download via Google Sheets</a>
