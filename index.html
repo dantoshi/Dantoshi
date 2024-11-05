@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
 
-    
     <style>
         html, body {
             height: 100%;
@@ -29,7 +28,7 @@
         #main-div {
             display: flex;
             flex: 1;
-            height: calc(100vh - 60px); 
+            height: calc(100vh - 50px);
         }
 
         nav {
@@ -53,6 +52,7 @@
             height: 100%; 
             border: none;
         }
+        
         a:link {
             color: orange; 
             text-decoration: none;
@@ -69,10 +69,16 @@
         a:active {
             color: orange; 
         }
+
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #BBBBBB;
+            padding: 10px;
+        }
     </style>
 </head>
 
-    
 <body>
     <header>
         <hr>
@@ -96,7 +102,6 @@
             <br><br>
             <a href="AKeytoWealth.html" onclick="updateIframeSrc(this.href); return false;">"One of the Keys to Wealth" [Blog]</a> 
             <br><br>
-            <!-- Add more links as needed -->
             <hr><br>
             <a style="text-align:right;" href="Archives.html" onclick="updateIframeSrc(this.href); return false;">ARCHIVES</a> 
             <br><br>
@@ -110,12 +115,15 @@
         </section>
     </div>
 
-    
+    <footer>
+        © 2024 Dantoshi.com - All Rights Reserved
+    </footer>
+
     <script>
         function updateIframeSrc(url) {
             document.getElementById('content-frame').src = url;
         }
-        <!-- Set the iframe src to the first link on page load -->
+        // Set the iframe src to the first link on page load
         window.onload = function() {
             var featuredLink = document.getElementById('featured-link').href;
             updateIframeSrc(featuredLink);
