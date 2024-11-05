@@ -28,7 +28,7 @@
         #main-div {
             display: flex;
             flex: 1;
-            height: calc(100vh - 60px); 
+            height: calc(100vh - 60px);
         }
 
         nav {
@@ -38,7 +38,8 @@
             text-align: center;
             padding: 10px;
             box-sizing: border-box;
-            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         section {
@@ -50,25 +51,42 @@
 
         iframe {
             width: 100%;
-            height: 100%; 
+            height: 100%;
             border: none;
         }
 
         a:link {
-            color: orange; 
+            color: orange;
             text-decoration: none;
         }
 
         a:visited {
-            color: lightgrey; 
+            color: lightgrey;
         }
 
         a:hover {
-            color: white; 
+            color: white;
         }
 
         a:active {
-            color: orange; 
+            color: orange;
+        }
+
+        .warning {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.9em;
+            color: lightgrey;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            #main-div {
+                flex-direction: column;
+            }
+            nav, section {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -87,7 +105,7 @@
             <hr>
             <h3>Featured</h3>
             <br>
-            <a href="PredictionMarketArbitrage.html" onclick="updateIframeSrc(this.href); return false;" id="featured-link">"Profit from Prediction Market Arbitrage" [Blog]</a> 
+            <a href="PredictionMarketArbitrage.html" onclick="updateIframeSrc(this.href); return false;" id="featured-link">"Profit from Prediction Market Arbitrage" [Blog]</a>
             <br><br>
             <h3>Most Recent</h3>
             <br>
@@ -95,18 +113,18 @@
             <br><br>
             <a href="AlternativeToSellingBTC.html" onclick="updateIframeSrc(this.href); return false;">"The Profitable Alternative to Selling Your Bitcoin" [Blog]</a>
             <br><br>
-            <a href="AKeytoWealth.html" onclick="updateIframeSrc(this.href); return false;">"One of the Keys to Wealth" [Blog]</a> 
+            <a href="AKeytoWealth.html" onclick="updateIframeSrc(this.href); return false;">"One of the Keys to Wealth" [Blog]</a>
             <br><br>
             <!-- Add more links as needed -->
             <hr><br>
-            <a style="text-align:right;" href="Archives.html" onclick="updateIframeSrc(this.href); return false;">ARCHIVES</a> 
+            <a style="text-align:right;" href="Archives.html" onclick="updateIframeSrc(this.href); return false;">ARCHIVES</a>
             <br><br>
-            <a style="text-align:right;" href="Contact.html" onclick="updateIframeSrc(this.href); return false;">CONTACT</a> 
+            <a style="text-align:right;" href="Contact.html" onclick="updateIframeSrc(this.href); return false;">CONTACT</a>
             <br><br>
             <a style="text-align:right;" href="Donate.html" onclick="updateIframeSrc(this.href); return false;">DONATE &#x20BF;</a>
             
-            <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 0.9em; color: lightgrey;">
-                WARNING: Not financial advice. 
+            <div class="warning">
+                WARNING: Not financial advice.
                 <br>
                 Made for entertainment / education.
             </div>
@@ -121,7 +139,7 @@
         function updateIframeSrc(url) {
             document.getElementById('content-frame').src = url;
         }
-        // Set the iframe src to the first link on page load
+        
         window.onload = function() {
             var featuredLink = document.getElementById('featured-link').href;
             updateIframeSrc(featuredLink);
